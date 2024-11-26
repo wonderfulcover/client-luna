@@ -20,7 +20,7 @@ const handlePlay = () => {
         </div>
         <div 
             class="control__item rounded-2xl transition-all ease-in-out delay-150 cursor-pointer bg-black/20 backdrop-blur-lg border-white/10 flex justify-between flex-col"
-            :class="showVideo ? 'px-4  py-4 border-4' : 'px-8 py-6 border'"
+            :class="showVideo ? 'px-4 py-4 border-4' : 'px-8 py-6 border'"
             @click="handlePlay"
         >
             <div v-if="!showVideo" class="flex justify-start items-center gap-6">
@@ -29,7 +29,7 @@ const handlePlay = () => {
                         <img src="/images/luna-profile.png" class="w-full h-full" />                                        
                     </div>                    
                 </div>
-                <div class="flex flex-col justify-start items-start gap-1">
+                <div class="hidden md:flex flex-col justify-start items-start gap-1">
                     <button class="text-white text-sm font-semibold p-gradient">Watch livestream</button>
                     <p class="p-white/50 text-[12px]">24/7 live</p>
                 </div>

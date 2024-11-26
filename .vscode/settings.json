@@ -1,0 +1,8 @@
+{
+    "prettier.enable": false,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit"
+    },
+    "scss.lint.unknownAtRules": "ignore"
+  }
+  

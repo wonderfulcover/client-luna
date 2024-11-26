@@ -87,6 +87,7 @@ useHead({
                     class="relative w-full" 
                     v-if="landingPageData?.exchangeList && landingPageData?.exchangeList.length > 0">
                     <div class="font-semibold text-sm text-white">Exchange / DEX</div>
+                    <hr class="border-white/10 w-full my-2"/>
                     <div class="flex flex-col justify-between items-start text-white w-full">                
                         <div
                             v-for="(exchange, i) in landingPageData?.exchangeList" 
@@ -94,7 +95,7 @@ useHead({
                             :alt="exchange.altText" 
                             :key="i"
                             @click="handleGoTo(exchange?.link)"
-                            class="py-3 flex justify-between items-center w-full">
+                            class="py-3 flex justify-between items-center w-full cursor-pointer">
                             {{ exchange?.title }}
 
                             <CommonIconsArrowRight class="text-white/80 w-4 h-4" />

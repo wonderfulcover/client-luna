@@ -14,8 +14,8 @@
             <slot />
         </div>
         <div class="flex flex-col justify-start items-start gap-1">
-            <h4 class="font-semibold text-base">{{ props?.title }}</h4>
-            <p class="text-sm leading-6 text-white/80">{{ props?.description }}</p>
+            <h4 class="font-semibold text-base text-gradient">{{ props?.title }}</h4>
+            <p class="text-sm leading-6 text-white/60">{{ props?.description }}</p>
         </div>
     </div>
 </template>

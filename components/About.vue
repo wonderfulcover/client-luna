@@ -12,12 +12,12 @@ const { dexScreenData } = storeToRefs(dexscreenerStore)
 </script>
 
 <template>    
-    <section id="about" class="about max-w-screen-xl utility flex flex-col justify-start items-center gap-16 py-24" >
+    <section id="about" class="about max-w-screen-xl utility flex flex-col justify-start items-center gap-16 py-10 md:py-24" >
         <div>
             <CommonFeatureLabel class="about__label">
                 <span class="text-sm">{{ landingPageData?.aboutLabel }}</span>
             </CommonFeatureLabel>
-            <div v-if="landingPageData?.aboutSubTitle" class="p-gradient leading-relaxed max-w-md text-center opacity-70 mt-10">
+            <div v-if="landingPageData?.aboutSubTitle" class="px-5 2xl:px-0 p-gradient leading-relaxed max-w-md text-center opacity-70 mt-10">
                 {{ landingPageData?.aboutSubTitle }}
             </div>
         </div> 
@@ -40,7 +40,7 @@ const { dexScreenData } = storeToRefs(dexscreenerStore)
                     <Sphere />
                 </div>
                 <div class="flex justify-center flex-col items-center gap-10">                    
-                    <TypeEffect />
+                    <TypeEffect class="text-center px-5 md:px-0"/>
                     <CommonButton>Learn more</CommonButton>
                 </div>                
             </div>
@@ -52,7 +52,7 @@ const { dexScreenData } = storeToRefs(dexscreenerStore)
                     <div class="particle particle-4"></div>
                 </div>
             </div>            
-            <img src="/images/mesh.png" />          
+            <img class="w-full object-cover" src="/images/mesh.png" />          
         </div>        
     </section> 
 </template>

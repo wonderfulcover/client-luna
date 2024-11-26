@@ -1,4 +1,4 @@
-<script lang="ts" setup>
+k<script lang="ts" setup>
 import { storeToRefs } from 'pinia';
 import { useUI } from '~/stores/ui'
 
@@ -46,11 +46,11 @@ const handleGoTo = (link: string) => {
         class="w-full fixed z-[99999999] header transition-transform duration-500 ease-in-out"
         :class="isHeaderVisible ? 'translate-y-0' : '-translate-y-full'"
     >
-        <div class="w-full flex justify-between items-center max-w-screen-xl mx-auto py-5">
+        <div class="w-full flex justify-between items-center max-w-screen-xl mx-auto py-5 px-5 2xl:px-0">
             <div>
                 <NuxtLink to="/" class="text-3xl font-bold text-gradient">LUNA</NuxtLink>
             </div>
-            <div class="border rounded-full border-white/5 px-6 py-3 flex justify-center items-center gap-8 text-sm bg-white/[1%] backdrop-blur-xl">
+            <div class="hidden border rounded-full border-white/5 px-6 py-3 md:flex justify-center items-center gap-8 text-sm bg-white/[1%] backdrop-blur-xl">
                 <NuxtLink @click="scrollToSection('exchange')" class="cursor-pointer">Exchange/DEX</NuxtLink>                
                 <NuxtLink @click="scrollToSection('about')" class="cursor-pointer">About</NuxtLink>
                 <NuxtLink @click="scrollToSection('utility')" class="cursor-pointer">Utilities</NuxtLink>
@@ -59,7 +59,7 @@ const handleGoTo = (link: string) => {
             </div>
             <div class="flex justify-end items-center gap-6">  
                 <CommonSocialsDiscord class=" fill-white/80 stroke-white w-8 h-8 cursor-pointer hover:fill-white/100" />
-                <CommonButton class="cursor-pointer"  @click="showBuyModal = true">Buy Luna</CommonButton>
+                <CommonButton class="cursor-pointer"  @click="showBuyModal = true">Buy LUNA</CommonButton>
             </div>
         </div>
     </div>

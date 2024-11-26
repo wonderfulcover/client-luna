@@ -13,18 +13,16 @@ const handleGoTo = (link: string) => {
 </script>
 
 <template>
-    <section id="exchange" class=" max-w-screen-xl relative flex flex-col justify-start items-center gap-10 py-32 exchange" >
+    <section id="exchange" class="max-w-screen-xl relative flex flex-col justify-start items-center gap-10 py-10 md:py-32 exchange" >
         <div v-if="landingPageData?.exchangeLabel">
             <CommonFeatureLabel>
                 <span class="text-sm">{{ landingPageData?.exchangeLabel }}</span>
             </CommonFeatureLabel>
-        </div>
-    
-        
+        </div>        
         <div 
             class="relative" 
             v-if="landingPageData?.exchangeList && landingPageData?.exchangeList.length > 0">
-            <div class="grid grid-cols-4 card-grid w-full h-full gap-20 justify-center items-center">                
+            <div class="px-5 2xl:px-0 grid grid-cols-1 md:grid-cols-4 card-grid w-full h-full gap-10 md:gap-20 justify-center items-center">                
                 <SanityImage 
                     v-for="(exchange, i) in landingPageData?.exchangeList" 
                     :asset-id="exchange?.image.asset?._ref"  

@@ -49,16 +49,16 @@ onMounted(() => {
                 class="overflow-hidden relative hero__luna bg-[#020013] pt-40 flex flex-col justify-start items-start"
                 :class="`${!dexScreenData?.priceChange24h.isPositive ? 'negative' : ''}`">                
                 <div class="flex justify-center items-center flex-col mx-auto py-20 hero__header">
-                    <h1 v-if="landingPageData?.heroTitle" class="text-[82px] font-semibold leading-tight text-gradient">{{ landingPageData?.heroTitle }}</h1>
-                    <h2 v-if="landingPageData?.heroSubTitle" class="p-gradient">{{ landingPageData?.heroSubTitle }}</h2>
+                    <h1 v-if="landingPageData?.heroTitle" class="text-3xl sm:text-5xl md:text-[82px] text-center font-semibold leading-tight text-gradient">{{ landingPageData?.heroTitle }}</h1>
+                    <h2 v-if="landingPageData?.heroSubTitle" class="p-gradient text-center text-sm md:text-base">{{ landingPageData?.heroSubTitle }}</h2>
                 </div>
 
-                <div class="absolute bottom-[28%] left-0 right-0 flex justify-center items-center z-20 transition-all ease-in-out duration-150 group-hover:scale-105 cursor-pointer" >
+                <div class="absolute bottom-16 sm:bottom-[28%] left-0 right-0 flex justify-center items-center z-20 transition-all ease-in-out duration-150 group-hover:scale-105 cursor-pointer" >
                     <div 
                         @click="handleShowModal"
                         class="rounded-full border border-white/50 bg-black/20 p-2">
-                        <div class="rounded-full border border-white/20 bg-white/5 flex justify-center items-center w-20 h-20">
-                            <CommonIconsPlay class="w-5 h-5 text-white group-hover:scale-150 ease-in-out transition-all duration-200" />
+                        <div class="rounded-full border border-white/20 bg-white/5 flex justify-center items-center w-10 h-10 md:w-20 md:h-20">
+                            <CommonIconsPlay class="w-3 h-3 md:w-5 md:h-5 text-white group-hover:scale-150 ease-in-out transition-all duration-200" />
                         </div>
                     </div>
                 </div>
@@ -82,7 +82,7 @@ onMounted(() => {
                     :like-count="230"
                     :post-count="465"
                 /> -->
-                <div class="absolute bottom-20 flex justify-center items-center gap-3 left-0 right-0 z-[9999999]">
+                <div class="hidden absolute bottom-20 md:flex flex-wrap justify-center items-center gap-3 left-0 right-0 z-[9999999]">
                     <div class="border border-white/10 rounded-lg px-4 py-2 text-sm font-medium backdrop-blur-md text-white/50 group-hover:border-white/10 group-hover:text-white/80">Price: {{ dexScreenData?.priceUsd }}</div>
                     <div class="border border-white/10 rounded-lg px-4 py-2 text-sm font-medium backdrop-blur-md text-white/50 group-hover:border-white/10 group-hover:text-white/80">Market Cap: {{ numeral(dexScreenData?.marketCap).format('0,0a') }}</div>
                     <div class="border border-white/10 rounded-lg px-4 py-2 text-sm font-medium backdrop-blur-md text-white/50  group-hover:border-white/10 group-hover:text-white/80 flex justify-start items-center gap-1">
