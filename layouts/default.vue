@@ -31,10 +31,6 @@ const handleGoTo = (link: string) => {
         window.open(link, '_blank')
     }
 }
-
-useHead({
-  meta: [{ property: 'og:title', content: `App Name - ${route.meta.title}` }]
-})
 </script>
 
 
