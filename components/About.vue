@@ -3,11 +3,20 @@ import { useLandingStore } from '~/stores/landing'
 import { useDexScreener } from '~/stores/dexscreener';
 import TypeEffect from './Common/TypeEffect.vue';
 
+const env = useRuntimeConfig()
+const { TERMINAL_URL, WHITEPAPER_URL } = env.public;
+
 const landingStore = useLandingStore()
 const { landingPageData } = storeToRefs(landingStore)
 
 const dexscreenerStore = useDexScreener()
 const { dexScreenData } = storeToRefs(dexscreenerStore)
+
+const handleGoTo = (link: string) => {
+    if (link) {
+        window.open(link, '_blank')
+    }
+}
 
 </script>
 
@@ -41,7 +50,11 @@ const { dexScreenData } = storeToRefs(dexscreenerStore)
                 </div>
                 <div class="flex justify-center flex-col items-center gap-10">                    
                     <TypeEffect class="text-center px-5 md:px-0"/>
-                    <CommonButton>Learn more</CommonButton>
+                    <div class="flex justify-center items-center gap-3">
+                        <CommonButton @click="handleGoTo(TERMINAL_URL)">Learn more</CommonButton>
+                        <CommonButton class="bg-white/10 backdrop-blur-2xl text-white" @click="handleGoTo(WHITEPAPER_URL)">Whitepaper</CommonButton>
+                    </div>
+                    
                 </div>                
             </div>
             <div class="absolute left-0 top-0 right-0 z-40 h-[400px] w-full flex justify-start items-start">

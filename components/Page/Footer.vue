@@ -1,4 +1,12 @@
 <script lang="ts" setup>
+import { storeToRefs } from 'pinia';
+import { useUI } from '~/stores/ui'
+
+const uiStore = useUI()
+const { showBuyModal } = storeToRefs(uiStore)
+
+const env = useRuntimeConfig()
+const { DISCORD_URL, WHITEPAPER_URL, TELEGRAM_URL } = env.public;
 
 const scrollToSection = (id: string) => {
   const section = document.getElementById(id)
@@ -25,10 +33,10 @@ const handleGoTo = (link: string) => {
             <NuxtLink @click="scrollToSection('about')" class="cursor-pointer">About</NuxtLink>
             <NuxtLink @click="scrollToSection('utility')" class="cursor-pointer">Utilities</NuxtLink>
             <NuxtLink @click="scrollToSection('news')" class="cursor-pointer">News</NuxtLink>
-            <NuxtLink @click="handleGoTo('https://whitepaper.virtuals.io/')" class="cursor-pointer">Whitepaper</NuxtLink>               
+            <NuxtLink @click="handleGoTo(WHITEPAPER_URL)" class="cursor-pointer">Whitepaper</NuxtLink>               
         </div>
         <div class="flex justify-end items-center gap-6">              
-            <CommonButton class="cursor-pointer"  @click="scrollToSection('exchange')">Buy Luna</CommonButton>
+            <CommonButton class="cursor-pointer" @click="showBuyModal = true">Buy Luna</CommonButton>
         </div>        
     </div>
     <div class="w-full flex justify-center flex-col md:flex-row md:justify-between items-center max-w-screen-xl mx-auto py-10 gap-10">        
@@ -37,8 +45,8 @@ const handleGoTo = (link: string) => {
             Powered by Virtuals Protocol.</span>
         </div>
         <div class="flex justify-end items-center gap-6 px-5 2xl:px-0">
-            <CommonSocialsDiscord class=" fill-white/80 stroke-white w-8 h-8 cursor-pointer hover:fill-white/100" />
-            <CommonSocialsTelegram class="fill-white/80 stroke-white w-8 h-8 cursor-pointer hover:fill-white/100" />
+            <CommonSocialsDiscord @click="handleGoTo(DISCORD_URL)" class=" fill-white/80 stroke-white w-8 h-8 cursor-pointer hover:fill-white/100" />
+            <CommonSocialsTelegram @click="handleGoTo(TELEGRAM_URL)" class="fill-white/80 stroke-white w-8 h-8 cursor-pointer hover:fill-white/100" />
         </div>
     </div>
 </template>

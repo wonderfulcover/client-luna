@@ -13,7 +13,6 @@ const handleGoTo = (link: string) => {
 
 <template>
   <section id="news" class="max-w-screen-xl flex flex-col justify-start items-center gap-20 news pt-10 md:py-32 relative">
-    <!-- News Label -->
     <div v-if="landingPageData?.newsLabel">
       <CommonFeatureLabel>
         <span class="text-sm">{{ landingPageData?.newsLabel }}</span>

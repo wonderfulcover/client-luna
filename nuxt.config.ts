@@ -23,6 +23,10 @@ export default defineNuxtConfig({
       DEX_API_URL: 'https://api.dexscreener.com',
       CHAIN_ID: process.env.CHAIN_ID,
       PAIR_ID: process.env.PAIR_ID,
+      WHITEPAPER_URL: 'https://whitepaper.virtuals.io/',
+      TERMINAL_URL: 'https://terminal.virtuals.io/',
+      DISCORD_URL: 'https://discord.gg/lunavirtuals',
+      TELEGRAM_URL: 'https://t.me/luna_virtuals_bot'
     }
   },
   vite: {

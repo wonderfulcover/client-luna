@@ -5,6 +5,9 @@ import { useUI } from '~/stores/ui'
 const uiStore = useUI()
 const { showBuyModal } = storeToRefs(uiStore)
 
+const env = useRuntimeConfig()
+const { DISCORD_URL, WHITEPAPER_URL } = env.public;
+
 const isHeaderVisible = ref(true)
 let lastScrollPosition = 0
 
@@ -55,11 +58,11 @@ const handleGoTo = (link: string) => {
                 <NuxtLink @click="scrollToSection('about')" class="cursor-pointer">About</NuxtLink>
                 <NuxtLink @click="scrollToSection('utility')" class="cursor-pointer">Utilities</NuxtLink>
                 <NuxtLink @click="scrollToSection('news')" class="cursor-pointer">News</NuxtLink>  
-                <NuxtLink @click="handleGoTo('https://whitepaper.virtuals.io/')" class="cursor-pointer">Whitepaper</NuxtLink>
+                <NuxtLink @click="handleGoTo(WHITEPAPER_URL)" class="cursor-pointer">Whitepaper</NuxtLink>
             </div>
             <div class="flex justify-end items-center gap-6">  
-                <CommonSocialsDiscord class=" fill-white/80 stroke-white w-8 h-8 cursor-pointer hover:fill-white/100" />
-                <CommonButton class="cursor-pointer"  @click="showBuyModal = true">Buy LUNA</CommonButton>
+                <CommonSocialsDiscord @click="handleGoTo(DISCORD_URL)" class="fill-white/80 stroke-white w-8 h-8 cursor-pointer hover:fill-white/100" />
+                <CommonButton class="cursor-pointer" @click="showBuyModal = true">Buy LUNA</CommonButton>
             </div>
         </div>
     </div>
